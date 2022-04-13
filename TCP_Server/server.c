@@ -30,8 +30,10 @@ int main()
 	}
 
 	if(listen(server_socket,1) == 0)
+	{
 		printf("Listening.....\n");
-
+	}
+		
 
 	client_socket = accept(server_socket,NULL,NULL);
 
