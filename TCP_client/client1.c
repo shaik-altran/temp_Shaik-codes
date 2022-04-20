@@ -29,20 +29,25 @@ int main()
 		printf("Error connecting to remote socket\n");
 		exit(0);
 	}
-	printf("Connected to the Server\n");
-	while(1)
-	{
-		printf("Client: \t");
-		scanf("%s", &server_response[0]);
-		send(client_socket, server_response, strlen(server_response), 0);
+	printf("Connected to the Server\n")
+	printf("Client: \t");
+	scanf("%s", &server_response[0]);
+	send(client_socket, server_response, strlen(server_response), 0);
 
-		if(recv(client_socket, server_response, 1024, 0) < 0)
-			printf("Error in receiving data.\n");
-		else
-			printf("Server:\t%s\n", server_response);
+	if(recv(client_socket, server_response, 1024, 0) < 0)
+	{
+		printf("Error in receiving data.\n");
 	}
 	
-	close(client_socket);
+	else
+	{
+		printf("Server:\t%s\n", server_response);
+	}
+	
+}
+	
+	
 
-}	
+
+	
 

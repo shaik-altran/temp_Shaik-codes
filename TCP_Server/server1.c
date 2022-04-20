@@ -49,14 +49,4 @@ int main()
 	else
 		printf("Error in binding\n");
 
-	while(1)
-	{
-		client_socket = accept(server_socket, (struct sockaddr *) &newAddr, &addr_size);
-		if(client_socket < 0)
-		{
-			printf("Problem in Connecting\n");
-			exit(0);
-		}
-		printf("Connection accepted from %s:%d\n", inet_ntoa(newAddr.sin_addr), ntohs(newAddr.sin_port));
-		if((childpid = fork()) == 0){
-			close(so);
+
