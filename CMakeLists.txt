@@ -4,7 +4,7 @@ project(HelloWorld)
 
 include_directories(${PROJECT_SOURCE_DIR})
 
-add_library(hellolib SHARED hellolib.c)
+add_library(hellolib  hellolib.c)
 
 add_executable(hellobin main.c)
 
